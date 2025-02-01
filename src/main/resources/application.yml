@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: eureka-server
+
+server:
+  port: 443
+  ssl:
+    enabled: true
+    key-store: /app/resources/keystore.p12 
+    key-store-password: ${KEY_STORE_PASSWORD}
+    key-alias-name: ${KEY_ALIAS_NAME}
+
+eureka:
+  instance:
+    hostname: eureka-server.lucaslabs.com
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: https://eureka-server.lucaslabs.com/eureka/
+    read-timeout: 5000
+    connect-timeout: 3000
+  server:
+    enable-self-preservation: true
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
+    org.springframework.security: WARN

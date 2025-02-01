@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  eureka-server:
+    image: projeto-arquitetura/eureka-server-1.0.0
+    container_name: eureka-server
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - VIRTUAL_HOST=${VIRTUAL_HOST}
+      - VIRTUAL_PORT=${VIRTUAL_PORT}
+      - KEY_STORE_PASSWORD=${KEY_STORE_PASSWORD}
+      - KEY_STORE_NAME=${KEY_STORE_NAME}
+    networks:
+      - arquitetura-network
+    restart: unless-stopped
+    hostname: eureka-server.lucaslabs.com
+    volumes:
+      - D:/Projetos/Docker/Projeto Arquitetura/certificados/.lucaslabs:/app/resources
+networks:
+  arquitetura-network:
+    external: true # Garante que a rede seja compartilhada com outros containers

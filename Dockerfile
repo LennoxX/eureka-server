@@ -23,7 +23,7 @@ COPY --from=build /app/target/*.jar app.jar
 #COPY src/main/resources/*.p12 /app/resources
 
 # Porta exposta pela aplicação
-EXPOSE 80
+EXPOSE 443
 
 # Comando para rodar o JAR
 ENTRYPOINT ["java", "-jar", "app.jar"]

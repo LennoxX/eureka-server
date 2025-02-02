@@ -7,7 +7,7 @@ Este projeto configura um **Eureka Server** que pode ser utilizado para registra
 1. **Docker e Docker Compose**:
    Certifique-se de ter o Docker e o Docker Compose instalados no seu sistema.
    
-3. **Certificados SSL**:
+2. **Certificados SSL**:
    Por questões de segurança, os certificados SSL não são versionados neste repositório. Você precisará gerar ou obter o certificado e a chave privada antes de realizar o deploy.
 
 ## Passos para Configuração
